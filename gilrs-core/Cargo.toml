@@ -27,7 +27,7 @@ nix = "0.23.1"
 vec_map = "0.8"
 
 [target.'cfg(target_os = "macos")'.dependencies]
-core-foundation = "0.6"
+core-foundation = "0.9.3"
 io-kit-sys = "0.1"
 vec_map = "0.8"
 
