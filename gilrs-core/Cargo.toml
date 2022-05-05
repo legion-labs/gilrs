@@ -36,9 +36,9 @@ winapi = { version = "0.3.4", features = ["xinput"] }
 rusty-xinput = "1.2.0"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-stdweb = "0.4.13"
-js-sys = { version = "0.3", optional = true }
-web-sys = { version = "0.3", optional = true, features = [
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+web-sys = { version = "0.3",  features = [
     "Gamepad",
     "GamepadButton",
     "GamepadMappingType",
@@ -46,12 +46,8 @@ web-sys = { version = "0.3", optional = true, features = [
     "Navigator",
 ] }
 
-[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
-wasm-bindgen-rs = { package = "wasm-bindgen", version = "0.2" }
-
 [package.metadata.docs.rs]
 features = ["serde"]
 
 [features]
 serde-serialize = ["serde"]
-wasm-bindgen = ["js-sys", "web-sys"]

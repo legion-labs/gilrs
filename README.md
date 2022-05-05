@@ -1,5 +1,4 @@
-GilRs - Game Input Library for Rust
-===================================
+# GilRs - Game Input Library for Rust
 
 [![pipeline status](https://gitlab.com/gilrs-project/gilrs/badges/master/pipeline.svg)](https://gitlab.com/gilrs-project/gilrs/commits/master)
 [![Crates.io](https://img.shields.io/crates/v/gilrs.svg)](https://crates.io/crates/gilrs)
@@ -28,8 +27,7 @@ This repository contains submodule; after you clone it, don't forget to run
 `git submodule init; git submodule update` (or clone with `--recursive` flag)
 or you will get compile errors.
 
-Example
--------
+## Example
 
 ```toml
 [dependencies]
@@ -64,23 +62,19 @@ loop {
 }
 ```
 
-Supported features
-------------------
+## Supported features
 
-|                  | Input | Hotplugging | Force feedback |
-|------------------|:-----:|:-----------:|:--------------:|
-| Linux/BSD (evdev)|   ✓   |      ✓      |        ✓       |
-| Windows (XInput) |   ✓   |      ✓      |        ✓       |
-| OS X             |   ✓   |      ✓      |        ✕       |
-| Wasm             |   ✓   |      ✓      |       n/a      |
-| Android          |   ✕   |      ✕      |        ✕       |
+|                   | Input | Hotplugging | Force feedback |
+| ----------------- | :---: | :---------: | :------------: |
+| Linux/BSD (evdev) |   ✓   |      ✓      |       ✓        |
+| Windows (XInput)  |   ✓   |      ✓      |       ✓        |
+| OS X              |   ✓   |      ✓      |       ✕        |
+| Wasm              |   ✓   |      ✓      |      n/a       |
+| Android           |   ✕   |      ✕      |       ✕        |
 
+# Platform specific notes
 
-Platform specific notes
-======================
-
-Linux/BSD (evdev)
------
+## Linux/BSD (evdev)
 
 With evdev, GilRs read (and write, in case of force feedback) directly from appropriate
 `/dev/input/event*` file. This mean that user have to have read and write access to this file.
@@ -90,17 +84,13 @@ On FreeBSD generic HID gamepads use hgame(4) and special use Linux driver via `w
 To build GilRs, you will need pkg-config and libudev .pc file. On some distributions this file
 is packaged in separate archive (e.g., `libudev-dev` in Debian, `libudev-devd` in FreeBSD).
 
-Wasm
-----
+## Wasm
 
-Wasm implementation uses stdweb, or wasm-bindgen with the wasm-bindgen feature.
-For stdweb, you will need [cargo-web](https://github.com/koute/cargo-web) to build gilrs for
-wasm32-unknown-unknown. For wasm-bindgen, you will need the wasm-bindgen cli or a tool like
+Wasm implementation uses wasm-bindgen. You will need the wasm-bindgen cli or a tool like
 [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/).
 Unlike other platforms, events are only generated when you call `Gilrs::next_event()`.
 
-License
-=======
+# License
 
 This project is licensed under the terms of both the Apache License (Version 2.0) and the MIT
 license. See LICENSE-APACHE and LICENSE-MIT for details.

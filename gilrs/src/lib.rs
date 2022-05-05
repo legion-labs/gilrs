@@ -102,9 +102,7 @@
 //! Wasm
 //! ----
 //!
-//! Wasm implementation uses stdweb, or wasm-bindgen with the wasm-bindgen feature.
-//! For stdweb, you will need [cargo-web](https://github.com/koute/cargo-web) to build gilrs for
-//! wasm32-unknown-unknown. For wasm-bindgen, you will need the wasm-bindgen cli or a tool like
+//! Wasm implementation uses wasm-bindgen. You will need the wasm-bindgen cli or a tool like
 //! [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/).
 //! Unlike other platforms, events are only generated when you call `Gilrs::next_event()`.
 
